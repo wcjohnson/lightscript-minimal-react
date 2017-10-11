@@ -1,0 +1,6 @@
+import React from 'react'
+
+export Test(props: { value?: string }) ->
+  <div>
+    Test control: {props.value}
+  </div>
