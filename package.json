@@ -1,5 +1,5 @@
 {
-  "name": "lscdiag2",
+  "name": "lightscript-minimal-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -80,13 +80,5 @@
       "jsx",
       "node"
     ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
