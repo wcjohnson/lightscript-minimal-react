@@ -2,5 +2,8 @@ import React from 'react'
 
 export Test(props: { value?: string }) ->
   <div>
-    Test control: {props.value}
+    <p>
+      Or edit <code>src/Test.lsc</code> to code in LightScript!
+    </p>
+    <div>{props.value}</div>
   </div>
