@@ -6,8 +6,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InterpolateHtmlPlugin = require('./InterpolateHtmlPlugin');
-const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const WatchMissingNodeModulesPlugin = require('./WatchMissingNodeModulesPlugin');
+const ModuleScopePlugin = require('./ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -66,6 +66,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
 module.exports = {
+  mode: 'development',
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
   devtool: 'cheap-module-source-map',

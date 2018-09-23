@@ -4,19 +4,18 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
+const InlineChunkHtmlPlugin = require('./InlineChunkHtmlPlugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safePostCssParser = require('postcss-safe-parser');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
+const InterpolateHtmlPlugin = require('./InterpolateHtmlPlugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
+const ModuleScopePlugin = require('./ModuleScopePlugin');
+const getCSSModuleLocalIdent = require('./getCSSModuleLocalIdent');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
-const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -276,7 +275,7 @@ module.exports = {
             use: [
               // This loader parallelizes code compilation, it is optional but
               // improves compile time on larger projects
-              require.resolve('thread-loader'),
+              // require.resolve('thread-loader'),
               {
                 loader: require.resolve('babel-loader'),
                 options: {

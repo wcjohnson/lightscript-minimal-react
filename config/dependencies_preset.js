@@ -38,36 +38,36 @@ module.exports = function(api, opts) {
     // https://github.com/webpack/webpack/issues/4039#issuecomment-419284940
     sourceType: 'unambiguous',
     presets: [
-      // isEnvTest && [
-      //   // ES features necessary for user's Node version
-      //   require('@babel/preset-env').default,
-      //   {
-      //     targets: {
-      //       node: 'current',
-      //     },
-      //     // Do not transform modules to CJS
-      //     modules: false,
-      //   },
-      // ],
-      // (isEnvProduction || isEnvDevelopment) && [
-      //   // Latest stable ECMAScript features
-      //   require('@babel/preset-env').default,
-      //   {
-      //     // We want Create React App to be IE 9 compatible until React itself
-      //     // no longer works with IE 9
-      //     targets: {
-      //       ie: 9,
-      //     },
-      //     // Users cannot override this behavior because this Babel
-      //     // configuration is highly tuned for ES5 support
-      //     ignoreBrowserslistConfig: true,
-      //     // If users import all core-js they're probably not concerned with
-      //     // bundle size. We shouldn't rely on magic to try and shrink it.
-      //     useBuiltIns: false,
-      //     // Do not transform modules to CJS
-      //     modules: false,
-      //   },
-      // ],
+      isEnvTest && [
+        // ES features necessary for user's Node version
+        require('@babel/preset-env').default,
+        {
+          targets: {
+            node: 'current',
+          },
+          // Do not transform modules to CJS
+          modules: false,
+        },
+      ],
+      (isEnvProduction || isEnvDevelopment) && [
+        // Latest stable ECMAScript features
+        require('@babel/preset-env').default,
+        {
+          // We want Create React App to be IE 9 compatible until React itself
+          // no longer works with IE 9
+          targets: {
+            ie: 9,
+          },
+          // Users cannot override this behavior because this Babel
+          // configuration is highly tuned for ES5 support
+          ignoreBrowserslistConfig: true,
+          // If users import all core-js they're probably not concerned with
+          // bundle size. We shouldn't rely on magic to try and shrink it.
+          useBuiltIns: false,
+          // Do not transform modules to CJS
+          modules: false,
+        },
+      ],
     ].filter(Boolean),
     plugins: [
       // Polyfills the runtime needed for async/await, generators, and friends
@@ -94,8 +94,6 @@ module.exports = function(api, opts) {
       ],
     ].filter(Boolean),
   };
-
-  throw new Error(result);
 
   return result;
 };
