@@ -4,6 +4,8 @@ A minimal skeleton for a LightScript + React application, ejected from `create-r
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+Issues: https://github.com/wcjohnson/lightscript/issues
+
 # Features
 
 - Powered by Babel 7 and LightScript 4
