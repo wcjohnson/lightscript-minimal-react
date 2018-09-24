@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@lightscript/babel-preset": "4.0.0-alpha.8",
-    "@lightscript/eslint-plugin": "4.0.0-alpha.8",
+    "@lightscript/babel-preset": "4.0.0-alpha.9",
+    "@lightscript/eslint-plugin": "4.0.0-alpha.9",
     "@babel/core": "7.1.0",
     "@babel/runtime": "7.0.0",
     "@babel/preset-env": "7.1.0",
