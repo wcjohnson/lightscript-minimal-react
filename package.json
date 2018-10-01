@@ -53,6 +53,7 @@
     "postcss-safe-parser": "4.0.1",
     "react-dev-utils": "^5.0.2",
     "resolve": "1.8.1",
+    "rimraf": "^2.6.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
     "sw-precache-webpack-plugin": "0.11.5",
@@ -66,7 +67,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "clean": "rimraf build"
   },
   "jest": {
     "collectCoverageFrom": [
