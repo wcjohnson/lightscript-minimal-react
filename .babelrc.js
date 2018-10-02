@@ -22,36 +22,40 @@ if (isEnvTest) {
 
 module.exports = {
   presets: [
-    ['@lightscript',
-      {
-        env: envOpts
-      }
-    ],
     ['@babel/preset-react',
+      // Babel presets are read in reverse order (why, babel, why)
+      // so this actually runs after lightscript, as it should
       {
         development: isEnvDevelopment || isEnvTest,
         useBuiltIns: true
       }
-    ]
-  ].filter(Boolean),
-  plugins: [
-    // Polyfill Babel runtime
-    ['@babel/plugin-transform-runtime',
+    ],
+    ['@lightscript',
       {
-        corejs: false,
-        helpers: false,
-        regenerator: true,
-        // Use modules in dev or prod under Webpack
-        useESModules: isEnvDevelopment || isEnvProduction
+        env: envOpts,
+        // These plugins will load after LightScript, as they must since
+        // they can't read lightscript syntax.
+        additionalPlugins: [
+          // Polyfill Babel runtime
+          ['@babel/plugin-transform-runtime',
+            {
+              corejs: false,
+              helpers: false,
+              regenerator: true,
+              // Use modules in dev or prod under Webpack
+              useESModules: isEnvDevelopment || isEnvProduction
+            }
+          ],
+          // Strip prop types in production
+          isEnvProduction && ['babel-plugin-transform-react-remove-prop-types',
+            { removeImport: true }
+          ],
+          // Allow the use of generators
+          !isEnvTest && ['@babel/plugin-transform-regenerator',
+            { async: false }
+          ]
+        ].filter(Boolean)
       }
-    ],
-    // Strip prop types in production
-    isEnvProduction && ['babel-plugin-transform-react-remove-prop-types',
-      { removeImport: true }
-    ],
-    // Allow the use of generators
-    !isEnvTest && ['@babel/plugin-transform-regenerator',
-      { async: false }
     ]
   ].filter(Boolean)
 }
