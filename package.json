@@ -7,8 +7,8 @@
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
-    "@lightscript/babel-preset": "4.0.0-alpha.13",
-    "@lightscript/eslint-plugin": "4.0.0-alpha.13",
+    "@lightscript/babel-preset": "4.0.0-alpha.15",
+    "@lightscript/eslint-plugin": "4.0.0-alpha.15",
     "@babel/core": "7.1.2",
     "@babel/runtime": "7.1.2",
     "@babel/preset-env": "7.1.0",
