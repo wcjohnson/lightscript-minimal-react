@@ -1,22 +1,42 @@
-import React from 'react'
+import React, { Component } from 'react'
 import logo from './logo.svg'
 import lscLogo from './lsclogo.svg'
 import './App.css'
 
-class LscLogo extends React.Component:
-  render() ->
-    <img src={lscLogo} className="App-logo" alt="lsc logo" />
+smallLogo = { width: 48, height: 48, marginLeft: 10 }
 
-App() ->
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <LscLogo />
-      <h1 className="App-title">Welcome to React + LightScript</h1>
-    </header>
-    <p className="App-intro">
-      To get started, edit <code>src/App.lsx</code> and save to reload.
-    </p>
-  </div>
+class App extends Component:
+  render() ->
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.lsx</code> and save to reload.
+        </p>
+        <p className="vcenter">
+          Powered by <a
+            className="App-link vcenter"
+            href="https://wcjohnson.github.io/lightscript"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={lscLogo} alt="logo" style={smallLogo} />
+            LightScript
+          </a>
+        </p>
+        <p className="vcenter">
+          Powered by <a
+            className="App-link vcenter"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={logo} alt="logo" style={smallLogo} />
+            React
+          </a>
+        </p>
+      </header>
+    </div>
+
 
 export default App
