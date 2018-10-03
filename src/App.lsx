@@ -3,11 +3,15 @@ import logo from './logo.svg'
 import lscLogo from './lsclogo.svg'
 import './App.css'
 
+class LscLogo extends React.Component:
+  render() ->
+    <img src={lscLogo} className="App-logo" alt="lsc logo" />
+
 App() ->
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <img src={lscLogo} className="App-logo" alt="lsc logo" />
+      <LscLogo />
       <h1 className="App-title">Welcome to React + LightScript</h1>
     </header>
     <p className="App-intro">
