@@ -334,6 +334,8 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        // Allow App to be used as an alias for the app source directory
+        'App': path.resolve(__dirname, "../src"),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
