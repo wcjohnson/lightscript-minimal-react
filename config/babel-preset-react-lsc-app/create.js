@@ -38,8 +38,13 @@ module.exports = function (api, opts, env) {
   var isTypeScriptEnabled = validateBoolOption(
     'typescript',
     opts.typescript,
-    true
+    false
   );
+  var isLightScriptEnabled = validateBoolOption(
+    'lightscript',
+    opts.lightscript,
+    true
+  )
   var areHelpersEnabled = validateBoolOption('helpers', opts.helpers, true);
   var useAbsoluteRuntime = validateBoolOption(
     'absoluteRuntime',
@@ -66,6 +71,13 @@ module.exports = function (api, opts, env) {
 
   return {
     presets: [
+      isLightScriptEnabled && [
+        require('@lightscript/babel-preset').default,
+        {
+          // Don't do env transform since preset-react is handling that
+          env: false
+        }
+      ],
       isEnvTest && [
         // ES features necessary for user's Node version
         require('@babel/preset-env').default,
@@ -146,13 +158,13 @@ module.exports = function (api, opts, env) {
       // class { handleClick = () => { } }
       // Enable loose mode to use assignment instead of defineProperty
       // See discussion in https://github.com/facebook/create-react-app/issues/4263
-      [
+      !isLightScriptEnabled && [
         require('@babel/plugin-proposal-class-properties').default,
         {
           loose: true,
         },
       ],
-      [
+      !isLightScriptEnabled && [
         require('@babel/plugin-proposal-private-methods').default,
         {
           loose: true,
@@ -197,7 +209,7 @@ module.exports = function (api, opts, env) {
       require('@babel/plugin-proposal-nullish-coalescing-operator').default,
     ].filter(Boolean),
     overrides: [
-      isFlowEnabled && {
+      (isFlowEnabled && !isLightScriptEnabled) && {
         exclude: /\.tsx?$/,
         plugins: [require('@babel/plugin-transform-flow-strip-types').default],
       },
