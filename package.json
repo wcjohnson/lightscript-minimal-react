@@ -1,5 +1,5 @@
 {
-  "name": "min-app",
+  "name": "lightscript-minimal-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,8 @@
     "@babel/runtime": "^7.13.0",
     "babel-plugin-macros": "^2.8.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "@lightscript/babel-preset": "4.0.0-alpha.36",
+    "@lightscript/babel-preset": "4.0.0-alpha.38",
+    "@lightscript/eslint-plugin": "4.0.0-alpha.38",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -91,7 +92,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:@lightscript/automatic"
     ]
   },
   "browserslist": {

@@ -16,7 +16,7 @@
   dependencies:
     "@babel/highlight" "^7.10.4"
 
-"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.5.5":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.5.5":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"
   integrity sha512-HV1Cm0Q3ZrpCR93tkWOYiuYIgLxZXZFVG2VgK+MBWjUqZTundupbfx2aXarXuw5Ko5aMcjtJgbSs4vUGBS5v6g==
@@ -1820,10 +1820,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@lightscript/babel-preset@4.0.0-alpha.36":
-  version "4.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@lightscript/babel-preset/-/babel-preset-4.0.0-alpha.36.tgz#4fb6c5bec83ac667e63c93cf459c659daf48e28e"
-  integrity sha512-QBFd1jmsyDai2iEgJcqs5IAm22aK43JG1yZdAZECKH/TxDq3Y4rnMd14fTIxB92XDoT3VLm5N8kzg7hOOFl+5Q==
+"@lightscript/babel-preset@4.0.0-alpha.38":
+  version "4.0.0-alpha.38"
+  resolved "https://registry.yarnpkg.com/@lightscript/babel-preset/-/babel-preset-4.0.0-alpha.38.tgz#367254889f7ee8c7c95602330b9a8958bda6bbe4"
+  integrity sha512-VEOM5PzJnONVa9L5f794A+fhvHuIH0auWNIgLeNb9biCa6VzdEJN5nDe0ESf9AZ0RbWit1zc6rsZwh6+k7JSPA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
@@ -1832,21 +1832,30 @@
     "@babel/plugin-proposal-private-methods" "^7.13.0"
     "@babel/plugin-proposal-throw-expressions" "^7.12.13"
     "@babel/plugin-transform-flow-strip-types" "^7.13.0"
-    "@lightscript/transform" "4.0.0-alpha.36"
+    "@lightscript/transform" "4.0.0-alpha.38"
 
-"@lightscript/parser@4.0.0-alpha.36":
-  version "4.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@lightscript/parser/-/parser-4.0.0-alpha.36.tgz#ccb0914668d99f2284d38b18703762722bdd2cb9"
-  integrity sha512-VQ1nDn75c1vrNMIJ1/Niyr04diR2A8HT6ZPjWdmhI6YvL0kD8Qn0lfGq3M0KPHAh2QaNqJINeRvI2aSL74QzkA==
+"@lightscript/eslint-plugin@4.0.0-alpha.38":
+  version "4.0.0-alpha.38"
+  resolved "https://registry.yarnpkg.com/@lightscript/eslint-plugin/-/eslint-plugin-4.0.0-alpha.38.tgz#5e089cd1beb7eae5fdcecae965b47346f66c4662"
+  integrity sha512-lIK40QsEy0xkBCfgNBDPBi3zxY5zSrD75eZzBYB8FzXwBTZB0JD9U8OAfdbojpMOIAGi5SuG1zKDeL+FxF4vKQ==
+  dependencies:
+    "@babel/code-frame" "^7.12.0"
+    eslint-scope "^5.1.0"
+    eslint-visitor-keys "^2.1.0"
 
-"@lightscript/transform@4.0.0-alpha.36":
-  version "4.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@lightscript/transform/-/transform-4.0.0-alpha.36.tgz#d18f4b112904ecd5a27bb0a7c3d88e3eec6fe2f6"
-  integrity sha512-3k60D9KOsZSuSx1DPq+uWjwbSLGXnoU5LmxM/T+aoebU8vrbV3NfvWy/jSwjknrY8IkQF5fsTil8NkixqJzWdg==
+"@lightscript/parser@4.0.0-alpha.38":
+  version "4.0.0-alpha.38"
+  resolved "https://registry.yarnpkg.com/@lightscript/parser/-/parser-4.0.0-alpha.38.tgz#49ba1c8edd4ac0ed46e721b5e6d1bbf702f8b5ca"
+  integrity sha512-dX0XX6A6uBLpHQhShjgnXm2qllFrlViQfGCtKEH0IjOobTw7fqhvFeetBEPEX/9MxvAhFH71ejHKjh9/vosMeg==
+
+"@lightscript/transform@4.0.0-alpha.38":
+  version "4.0.0-alpha.38"
+  resolved "https://registry.yarnpkg.com/@lightscript/transform/-/transform-4.0.0-alpha.38.tgz#05e736f4cf3445f3ab9802fd26ceff9ca575579d"
+  integrity sha512-w3J0OMB89LtByOtfBF+3vS2AfHLxb8hM+JCstrHbVJxWUubof5D4Uv6riwYkuAvLUfJsQSxIKV72ck7gguSHGQ==
   dependencies:
     "@babel/traverse" "^7.14.2"
     "@babel/types" "^7.14.2"
-    "@lightscript/parser" "4.0.0-alpha.36"
+    "@lightscript/parser" "4.0.0-alpha.38"
     "@oigroup/lightscript-runtime" "^0.1.1"
     ast-loc-utils "^1.1.0"
     find-babel-config "^1.2.0"
@@ -5011,7 +5020,7 @@ eslint-scope@^4.0.3:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-scope@^5.0.0, eslint-scope@^5.1.1:
+eslint-scope@^5.0.0, eslint-scope@^5.1.0, eslint-scope@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
   integrity sha512-2NxwbF/hZ0KpepYN0cNbo+FN6XoK7GaHlQhgx/hIZl6Va0bF45RQOOwhLIy8lQDbuCiadSLCBnH2CFYquit5bw==
@@ -5035,6 +5044,11 @@ eslint-visitor-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
+
+eslint-visitor-keys@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.1.0.tgz#f65328259305927392c938ed44eb0a5c9b2bd303"
+  integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
 eslint-webpack-plugin@^2.5.2:
   version "2.5.2"
