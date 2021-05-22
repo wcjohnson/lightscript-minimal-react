@@ -71,13 +71,6 @@ module.exports = function (api, opts, env) {
 
   return {
     presets: [
-      isLightScriptEnabled && [
-        require('@lightscript/babel-preset').default,
-        {
-          // Don't do env transform since preset-react is handling that
-          env: false
-        }
-      ],
       isEnvTest && [
         // ES features necessary for user's Node version
         require('@babel/preset-env').default,
@@ -112,6 +105,13 @@ module.exports = function (api, opts, env) {
         },
       ],
       isTypeScriptEnabled && [require('@babel/preset-typescript').default],
+      isLightScriptEnabled && [
+        require('@lightscript/babel-preset').default,
+        {
+          // Don't do env transform since that is handled later in the transform chain
+          env: false
+        }
+      ],
     ].filter(Boolean),
     plugins: [
       // Strip flow types before any other transform, emulating the behavior
