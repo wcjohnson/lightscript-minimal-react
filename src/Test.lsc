@@ -1,9 +1,0 @@
-import React from 'react'
-
-export Test(props: { value?: string }) ->
-  <div>
-    <p>
-      Or edit <code>src/Test.lsc</code> to code in LightScript!
-    </p>
-    <div>{props.value}</div>
-  </div>
